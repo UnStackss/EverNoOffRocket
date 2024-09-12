@@ -1,0 +1,10 @@
+[versions]
+
+[plugins]
+shadowJar = { id = "com.github.johnrengelman.shadow", version = "8.1.1" }
+kotlinJvm = { id = "org.jetbrains.kotlin.jvm", version = "2.0.0-Beta4" }
+
+
+
+[libraries]
+bStats = { module = "org.bstats:bstats-bukkit", version = "3.0.2"}

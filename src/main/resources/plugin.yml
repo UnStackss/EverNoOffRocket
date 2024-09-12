@@ -1,0 +1,8 @@
+name: EverNoOffRocket
+version: '1.0'
+main: dev.unstackss.evernooffrocket.EverNoOffRocket
+api-version: '1.21'
+prefix: EverNoOffRocket
+authors: [ UnStackss ]
+website: https://unstackss.dev
+description: "EverCraft EverNoOffRocket"

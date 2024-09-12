@@ -22,7 +22,7 @@
 
 ## 🚀 Come Installare
 
-1. Scarica il file `.jar` del plugin dalla sezione [Releases](#).
+1. Scarica il file `.jar` del plugin dalla sezione [Releases](https://github.com/UnStackss/EverNoOffRocket/releases/tag/latest).
 2. Inserisci il file `.jar` nella cartella `plugins` del server EverCraft.
 3. Riavvia il server per attivare il plugin.
 

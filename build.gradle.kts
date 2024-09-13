@@ -9,7 +9,7 @@ plugins {
 }
 
 group = "dev.unstackss"
-version = "1.8-1.21.1"
+version = "1.8-1.20.1"
 
 repositories {
     mavenCentral()
@@ -27,7 +27,7 @@ repositories {
 }
 
 dependencies {
-    compileOnly("org.spigotmc:spigot-api:1.21.1-R0.1-SNAPSHOT")
+    compileOnly("org.spigotmc:spigot-api:1.20.1-R0.1-SNAPSHOT")
     implementation(libs.bStats)
 }
 

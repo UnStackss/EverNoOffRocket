@@ -2,7 +2,7 @@
   <img src="https://i.imgur.com/m5Nwigv.png" alt="EverCraft" width="150">
 </p>
 
-<h1 align="center">NoRocketOffHand Plugin</h1>
+<h1 align="center">NoRocketOffHand Plugin 1.8-1.20.1</h1>
 
 <p align="center">
   Un plugin per EverCraft che impedisce ai giocatori di mettere e usare i razzi nella mano secondaria (off-hand).

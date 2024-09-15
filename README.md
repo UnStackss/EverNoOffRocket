@@ -19,6 +19,7 @@
 - **Blocca il posizionamento dei razzi nella mano secondaria:** Impedisce ai giocatori di spostare i razzi nell'off-hand.
 - **Impedisce l'uso dei razzi dalla mano secondaria:** Blocca l'interazione con i razzi posizionati nell'off-hand.
 - **Rimozione automatica dei razzi durante il movimento:** Se un giocatore ha razzi nell'off-hand durante il movimento, questi vengono spostati nell'inventario principale o lasciati cadere se l'inventario è pieno.
+- **Comando `/offhand` per spostare oggetti:** Consente ai giocatori di spostare l'oggetto dalla mano principale alla mano secondaria (off-hand), tranne i razzi. Se l'off-hand è già occupata, l'oggetto corrente viene spostato nell'inventario principale.
 
 ## 🚀 Come Installare
 
@@ -33,15 +34,18 @@ Non è richiesta alcuna configurazione aggiuntiva. Il plugin funziona automatica
 ## 📄 Come Usarlo
 
 - **Prevenzione Automatica:** Il plugin gestisce automaticamente la prevenzione dei razzi nell'off-hand. Non sono necessari comandi o permessi speciali.
-- **Messaggi Informativi:** I giocatori riceveranno messaggi che li informano quando i razzi vengono bloccati o rimossi dalla mano secondaria.
+- **Comando `/offhand`:** Utilizza il comando `/offhand` per spostare l'oggetto dalla mano principale alla mano secondaria. Se l'oggetto nella mano principale è un razzo, verrà bloccato. Se l'off-hand è già occupata, l'oggetto corrente verrà spostato nell'inventario principale.
+    - **Permesso:** `evernooffrocket.command.offhand`
+- **Messaggi Informativi:** I giocatori riceveranno messaggi che li informano quando i razzi vengono bloccati o rimossi dalla mano secondaria e quando l'oggetto viene spostato con il comando `/offhand`.
 
 ## 📂 Struttura del Codice
 
-Il plugin include i seguenti eventi:
+Il plugin include i seguenti eventi e comandi:
 
 - **`PlayerSwapHandItemsEvent`**: Impedisce il posizionamento dei razzi nella mano secondaria.
 - **`PlayerInteractEvent`**: Blocca l'uso dei razzi se posizionati nell'off-hand.
 - **`PlayerMoveEvent`**: Rimuove i razzi dalla mano secondaria durante il movimento, spostandoli nell'inventario o lasciandoli cadere.
+- **`/offhand` Command**: Permette di spostare l'oggetto dalla mano principale all'off-hand, tranne i razzi.
 
 ## 📝 Contribuire
 

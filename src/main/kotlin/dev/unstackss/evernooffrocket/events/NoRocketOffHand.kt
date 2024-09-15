@@ -49,15 +49,18 @@ object NoRocketOffHand : Listener {
         if (offHandItem.type == Material.FIREWORK_ROCKET) {
             val rocketsToMove = offHandItem.amount
             val rockets = ItemStack(Material.FIREWORK_ROCKET, rocketsToMove)
+            player.inventory.setItemInOffHand(ItemStack(Material.AIR))
             val leftover = player.inventory.addItem(rockets)
-            if (leftover.isEmpty) {
-                player.inventory.setItemInOffHand(null)
-            } else {
+            if (leftover.isNotEmpty()) {
                 val remainingRockets = leftover.values.first().amount
-                offHandItem.amount = remainingRockets
-                player.inventory.setItemInOffHand(offHandItem)
+                val location = player.location
+                val droppedItem = ItemStack(Material.FIREWORK_ROCKET, remainingRockets)
+                player.world.dropItemNaturally(location, droppedItem)
             }
         }
     }
+
+
+
 
 }

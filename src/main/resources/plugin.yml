@@ -1,7 +1,7 @@
 name: EverNoOffRocket
 version: '1.0'
 main: dev.unstackss.evernooffrocket.EverNoOffRocket
-api-version: '1.21'
+api-version: '1.20'
 prefix: EverNoOffRocket
 authors: [ UnStackss ]
 website: https://unstackss.dev

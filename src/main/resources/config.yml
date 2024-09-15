@@ -18,3 +18,7 @@ messages:
   PlayerSwapHandItemsEvent: "&cNon puoi mettere razzi nella mano secondaria!"
   PlayerInteractEvent: "&cNon puoi usare i razzi dalla mano secondaria!"
   PlayerMoveEvent: "&cI razzi sono stati rimossi dalla mano secondaria!"
+  noPermission: "&cNon hai il permesso per usare questo comando!"
+  noItemFound: "&cNon hai nessun oggetto nella mano principale da spostare!"
+  cantMoveItem: "&cNon puoi spostare i razzi nella mano secondaria!"
+  onlyInGame: "Questo comando può essere eseguito solo da un giocatore."

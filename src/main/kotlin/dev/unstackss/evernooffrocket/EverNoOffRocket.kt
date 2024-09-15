@@ -1,5 +1,6 @@
 package dev.unstackss.evernooffrocket
 
+import dev.unstackss.evernooffrocket.commands.OffHandCommand
 import dev.unstackss.evernooffrocket.events.NoRocketOffHand
 import dev.unstackss.evernooffrocket.utils.UnStacksLogger
 import org.bstats.bukkit.Metrics
@@ -32,8 +33,13 @@ class EverNoOffRocket : JavaPlugin() {
         server.pluginManager.registerEvents(NoRocketOffHand, this)
     }
 
+    private fun commands() {
+        getCommand("offhand")!!.setExecutor(OffHandCommand())
+    }
+
     override fun onEnable() {
         initialize()
         events()
+        commands()
     }
 }

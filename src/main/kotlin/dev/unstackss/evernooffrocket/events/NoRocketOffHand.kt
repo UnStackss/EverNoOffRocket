@@ -1,3 +1,5 @@
+@file:Suppress("SYNTHETIC_PROPERTY_WITHOUT_JAVA_ORIGIN")
+
 package dev.unstackss.evernooffrocket.events
 
 import dev.unstackss.evernooffrocket.EverNoOffRocket.Companion.plugin
@@ -17,6 +19,7 @@ object NoRocketOffHand : Listener {
         val item = event.offHandItem
         if (item != null && item.type == Material.FIREWORK_ROCKET) {
             event.isCancelled = true
+            moveRocketToMainInventory(event.player.inventory.itemInOffHand, event.player)
             event.player.sendMessage(Format.hex(Format.color(plugin.config.getString("messages.PlayerSwapHandItemsEvent"))))
         }
     }
@@ -27,6 +30,7 @@ object NoRocketOffHand : Listener {
         val offHandItem = player.inventory.itemInOffHand
         if (offHandItem.type == Material.FIREWORK_ROCKET) {
             event.isCancelled = true
+            moveRocketToMainInventory(offHandItem, player)
             player.sendMessage(Format.hex(Format.color(plugin.config.getString("messages.PlayerInteractEvent"))))
         }
     }
@@ -36,12 +40,24 @@ object NoRocketOffHand : Listener {
         val player = event.player
         val offHandItem = player.inventory.itemInOffHand
         if (offHandItem.type == Material.FIREWORK_ROCKET) {
-            player.inventory.setItemInOffHand(null)
-            val leftover = player.inventory.addItem(ItemStack(Material.FIREWORK_ROCKET, offHandItem.amount))
-            if (leftover.isNotEmpty()) {
-                player.world.dropItemNaturally(player.location, leftover.values.first())
-            }
+            moveRocketToMainInventory(offHandItem, player)
             player.sendMessage(Format.hex(Format.color(plugin.config.getString("messages.PlayerMoveEvent"))))
         }
     }
+
+    private fun moveRocketToMainInventory(offHandItem: ItemStack, player: org.bukkit.entity.Player) {
+        if (offHandItem.type == Material.FIREWORK_ROCKET) {
+            val rocketsToMove = offHandItem.amount
+            val rockets = ItemStack(Material.FIREWORK_ROCKET, rocketsToMove)
+            val leftover = player.inventory.addItem(rockets)
+            if (leftover.isEmpty) {
+                player.inventory.setItemInOffHand(null)
+            } else {
+                val remainingRockets = leftover.values.first().amount
+                offHandItem.amount = remainingRockets
+                player.inventory.setItemInOffHand(offHandItem)
+            }
+        }
+    }
+
 }

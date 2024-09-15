@@ -6,3 +6,7 @@ prefix: EverNoOffRocket
 authors: [ UnStackss ]
 website: https://unstackss.dev
 description: "EverCraft EverNoOffRocket"
+commands:
+  offhand:
+    aliases: ["off-hand", "mano-secondaria", "manosecondaria"]
+    description: "Toggles the off-hand mode of the player."
